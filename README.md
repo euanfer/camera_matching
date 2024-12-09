@@ -1,40 +1,24 @@
 # Track Matching Challenge
 
 ## Data Description
-The data represents 2D positions of football players tracked on a pitch:
-- Each CSV contains tracking data from different cameras
-- There is an overlap region in the middle of the pitch
-- Each track shows a player's movement over time (x, y, frame)
+The data represents 2D positions of football players tracked on a pitch, with 3rd dimension of time in the game.
 
-## Task
-Match the tracking patterns from both cameras by finding where they overlap:
+run analyze_matches.py to see the data.
 
-1. The data shows the same players viewed from different cameras
-2. Your goal is to find which tracks match between the two patterns
-3. The tracks should align perfectly when matched correctly
 
-## Important Constraints
-- Time axis (frame) must stay at 90° to the position plane (x,y)
-- Patterns must stay "upright" - no twisting/rotation allowed
-- Only use transformations that preserve the time alignment
-- The overlap occurs in the middle region of the pitch
 
-## Data Format
-Each CSV contains:
-- frame: Time point of detection
-- tracking_id: Unique ID for each track
-- pitch_x, pitch_y: 2D position on pitch
-- team_id: Team identifier
-- velocity: Movement speed
+the pitch is shown in pitch.png
 
-## Tips
-1. Use the visualization tool to examine both patterns in 3D
-2. Look for similar movement shapes in the overlap region
-3. Consider the timing of movements
-4. Remember that matching tracks should have similar motion patterns
 
-## Evaluation
-Your solution should:
-1. Identify which tracks match between patterns
-2. Explain your reasoning for the matches
-3. Describe how you aligned the patterns 
+the two data files are from video recordings of each side of the pitch, with the overlap region in the middle.
+
+
+i want you to stich the two plots together. 
+
+
+PROBLEM 
+the videos are slightly out of sync. the degree to which they are are out of sync varies. make algorithm to idenitfy the time difference by matching overlapping lines, between the two csvs. 
+
+then use the this to stich the two plots together, and correct for the time difference.
+
+if you do this in good time you are very likely to secure software engineering position at clann.
