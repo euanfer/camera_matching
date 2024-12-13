@@ -137,13 +137,14 @@ if __name__ == "__main__":
         3: 'rgb(0, 220, 130)'        # light green
     }
     
-    # Update paths to point to the new data location
+    # Updated paths for the three camera views
     pattern_files = [
-        "../data/pattern1.csv",
-        "../data/pattern2.csv"
+        "../data/camL_1.csv",
+        "../data/camM_1.csv",
+        "../data/camR_1.csv"
     ]
     
-    print(f"\nAnalyzing pattern files")
+    print(f"\nAnalyzing camera files")
     
     for csv_file in pattern_files:
         try:
