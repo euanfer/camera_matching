@@ -11,7 +11,12 @@ def load_and_filter_data(file_path):
     VELOCITY_THRESHOLD = 50
     MIN_TRACK_LENGTH = 30
     MAX_POSITION_JUMP = 50
-    
+
+    start_frame = 0
+    end_frame = 1000
+
+    data = data[(data['frame'] >= start_frame) & (data['frame'] <= end_frame)]
+
     valid_track_ids = []
     for track_id in data['tracking_id'].unique():
         track = data[data['tracking_id'] == track_id]
@@ -33,15 +38,15 @@ def load_and_filter_data(file_path):
 
 def create_combined_visualization():
     data_files = [
-        "../data/camL_1.csv",
-        "../data/camM_1.csv",
-        "../data/camR_1.csv"
+        "./data/combined/camL_1_kal.csv",
+        "./data/combined/camM_1_kal.csv",
+        "./data/combined/camR_1_kal.csv"
     ]
-    
+    print(f'{data_files[0]}')
     colors = {
-        'camL_1.csv': 'blue',
-        'camM_1.csv': 'red',
-        'camR_1.csv': 'green'
+        f'{data_files[0]}': 'blue',
+        f'{data_files[1]}': 'red',
+        f'{data_files[2]}': 'green'
     }
     
     # Create single plot figure
@@ -54,7 +59,7 @@ def create_combined_visualization():
             continue
             
         file_name = os.path.basename(file_path)
-        color = colors[file_name]
+        color = colors[file_path]
         
         print(f"Processing {file_name}...")
         data = load_and_filter_data(file_path)

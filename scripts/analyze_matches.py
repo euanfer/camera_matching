@@ -139,9 +139,9 @@ if __name__ == "__main__":
     
     # Updated paths for the three camera views
     pattern_files = [
-        "../data/camL_1.csv",
-        "../data/camM_1.csv",
-        "../data/camR_1.csv"
+        "./data/camL_1_fixed.csv",
+        "./data/camM_1.csv",
+        "./data/camR_1_fixed.csv"
     ]
     
     print(f"\nAnalyzing camera files")
