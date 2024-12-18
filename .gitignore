@@ -1,0 +1,5 @@
+# Large data files
+data/raw/camL_1_no_smooth.csv
+data/raw/camR_1_no_smooth.csv
+data/joined_data1.csv
+data/joined_data2.csv
